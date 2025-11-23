@@ -12,7 +12,7 @@ reverse_word_index = {value:key for key,value in word_index.items()}
 #load the trained model
 model = load_model( "simplernn_imdb.h5",
     custom_objects={
-        "SimpleRNN": SimpleRNN,
+        "SimpleRNN": simplernn,
         "Embedding": Embedding,
         "Dense": Dense
     }
@@ -56,3 +56,4 @@ if st.button("Classify"):
 else:
 
    st.write("Please enter a review and click 'Classify' to see the sentiment prediction.")
+
